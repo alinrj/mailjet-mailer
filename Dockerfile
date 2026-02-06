@@ -1,6 +1,10 @@
 # Importing JDK and copying required files
 FROM amazoncorretto:19 AS build
 WORKDIR /app
+
+# Install tar (required by mvnw)
+RUN yum install -y tar gzip && yum clean all
+
 COPY pom.xml .
 COPY src src
 
