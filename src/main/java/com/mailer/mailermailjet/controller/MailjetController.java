@@ -15,7 +15,7 @@ public class MailjetController {
     @Autowired
     private MailjetService mailjetService;
 
-    @GetMapping("keep-alive")
+    @GetMapping("/keep-alive")
     public ResponseEntity<String> keepAlive() {
         System.out.println("[API_CALL] Keep-alive method called: I am still alive :)");
 
