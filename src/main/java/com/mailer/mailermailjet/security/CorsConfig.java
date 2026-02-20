@@ -1,5 +1,6 @@
 package com.mailer.mailermailjet.security;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,7 @@ public class CorsConfig {
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
-            public void addCorsMappings(CorsRegistry registry) {
+            public void addCorsMappings(@NotNull CorsRegistry registry) {
                 String[] origins = corsAllowedOrigins.split(",");
                 registry.addMapping("/**") // Allow all endpoints
                         .allowedOrigins(origins) // Allow frontend origin
